@@ -58,14 +58,24 @@ function getArrayOfPixels($segment) {
     
 }
 
+function makeResourceFromArray($array) {
+
+    $resource = curl_init();
+
+    curl_setopt($resource, CURLOPT_PRIVATE, serialize($array));
+
+    return $resource;
+}
+
 function neuro() {
     set_time_limit(0);
-    $max_epochs = 500; // 500000
+    ini_set('memory_limit','2048M');
+    $max_epochs = 50; // 500000
     $epochs_between_reports = 10; // 1000
     $desired_error = 0.001;
     //var_dump(array_fill(0, 10000, 540));
-    $ann = fann_create_standard_array(10, array_fill(0, 10, 100));
-    fann_set_activation_function_hidden($ann, FANN_SIGMOID_SYMMETRIC);
+    $ann = fann_create_standard_array(3, array_fill(0, 3, 10));
+    //fann_set_activation_function_hidden($ann, FANN_SIGMOID_SYMMETRIC);
     fann_set_activation_function_output($ann, FANN_SIGMOID_SYMMETRIC);
     
     //$segment = getArrayOfPixels();
@@ -81,6 +91,15 @@ function neuro() {
 
     fann_destroy($ann);
     */
+}
+
+function test() {
+    $ann = fann_create_from_file(dirname(__FILE__) . "/data.net");
+    
+    $input = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    $calc_out = fann_run($ann, $input);
+    var_dump($calc_out);
+    fann_destroy($ann);
 }
 
 
@@ -156,4 +175,6 @@ if(@$_GET['action'] == 'collect') {
 	echo($http -> post('http://check.gibdd.ru/proxy/check/auto/dtp', 'vin=GX90-3079813&captchaWord='.$_GET['captcha'].'&checkType=aiusdtp') -> body);
 } else if(@$_GET['action'] == 'fann') {
     neuro();
+} else if(@$_GET['action'] == 'test') {
+    test();
 }
