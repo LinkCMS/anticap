@@ -27,6 +27,10 @@ function map($image) {
     }
 }
 
+function getSymbol($image, $number) {
+    slice($image, segment($image));
+}
+
 function segment($image, $visualize = false) {
     $segments = [0, 0, 0, 0, 0];
     for($j = 0; $j < 5; $j++) {
@@ -54,36 +58,46 @@ function segment($image, $visualize = false) {
     return @$segments;
 }
 
-function getArrayOfPixels($segment) {
+function getArrayOfPixels($file, $segment = null) {
+    $image = new Imagick($file);
+
+    $iterator = $image -> getPixelIterator();
+    $arr = [];
     
+    foreach ($iterator as $row => $pixels) {
+        foreach ($pixels as $col => $pixel) {
+            $arr[] = $pixel -> getColor()['a'];
+        }
+    }
+    $iterator -> syncIterator();
+    
+    return $arr;
 }
 
-function makeResourceFromArray($array) {
-
-    $resource = curl_init();
-
-    curl_setopt($resource, CURLOPT_PRIVATE, serialize($array));
-
-    return $resource;
-}
-
-function neuro() {
+function train() {
     set_time_limit(0);
     ini_set('memory_limit','2048M');
-    $max_epochs = 50; // 500000
-    $epochs_between_reports = 10; // 1000
+    $max_epochs = 10; //50000
+    $epochs_between_reports = 1000;
     $desired_error = 0.001;
     //var_dump(array_fill(0, 10000, 540));
-    $ann = fann_create_standard_array(3, array_fill(0, 3, 10));
-    //fann_set_activation_function_hidden($ann, FANN_SIGMOID_SYMMETRIC);
+    $ann = fann_create_standard(3, 600, 200, 10);
+    fann_set_activation_function_hidden($ann, FANN_SIGMOID_SYMMETRIC);
     fann_set_activation_function_output($ann, FANN_SIGMOID_SYMMETRIC);
     
     //$segment = getArrayOfPixels();
     
     //if (fann_train_on_data($ann, $segment, $max_epochs, $epochs_between_reports, $desired_error))
-    if (fann_train_on_file($ann, dirname(__FILE__) . "/4.png", $max_epochs, $epochs_between_reports, $desired_error)) {
-        fann_save($ann, dirname(__FILE__) . "/data.net");
+    //if (fann_train_on_file($ann, dirname(__FILE__) . "/4.png", $max_epochs, $epochs_between_reports, $desired_error)) {
+    //if (fann_train($ann, getArrayOfPixels(), $max_epochs, $epochs_between_reports, $desired_error)) {
+    //if (fann_train($ann, getArrayOfPixels(), $desired_error)) {
+    
+    for($i = 0; $i < 1; $i++) {
+        if (fann_train($ann, getArrayOfPixels('4/'.($i+1).'.png'), [-1, -1, -1, -1, 1, -1, -1, -1, -1, -1])) {
+            fann_save($ann, dirname(__FILE__) . "/data.net");
+        }
     }
+    
     /*
     $filename = dirname(__FILE__) . "/xor.data";
     if (fann_train_on_file($ann, $filename, $max_epochs, $epochs_between_reports, $desired_error))
@@ -94,16 +108,27 @@ function neuro() {
 }
 
 function test() {
+    
     $ann = fann_create_from_file(dirname(__FILE__) . "/data.net");
     
-    $input = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    //$input = array_fill(0, 540, rand(0, 1));
+    $input = getArrayOfPixels('6.png');
     $calc_out = fann_run($ann, $input);
     var_dump($calc_out);
     fann_destroy($ann);
 }
 
+function prepocessImage($image) {
+    $image -> cropImage(90, 30, 10, 15);
 
-function slice($image, $segments) {
+    $image ->segmentImage(12, 0, 0.1);
+    $image->transparentPaintImage('white', 0, 10000 , false);
+    $image -> levelImage(0, 0, 65536);
+    $image -> setColorspace(\Imagick::COLOR_BLACK);
+    return $image;
+}
+
+function slice(Imagick $image, $segments) {
     echo '<div style="padding: 10px; background: #ccc">';
     echo '<img src="data:image/png;base64,'.base64_encode($image).'">_________';
     /*
@@ -129,7 +154,15 @@ function slice($image, $segments) {
             $offset += 19;
             echo ' <img src="data:image/png;base64,'.base64_encode($letter).'">&nbsp;&nbsp;';
         } else {
-            $letter -> cropImage(14, 60, $offset + 9, 0);
+            
+            $letter -> cropImage(17, 60, $offset + 10, 0);
+            
+            //$letter -> setImagePage(20, 30, 0, 0);
+            $letter -> resizeImage(20, 30, 0, 0, true);
+            //$letter -> thumbnailImage(20, 30);
+            //$letter -> resampleImage(20, 30, 0, 0);
+            //$letter -> resampleImage(110, 100, 0, 0);
+            //$letter -> cropImage(20, 30, 0, 30);
             $offset += 15;
 //            $offset += 3;
             echo ' <img src="data:image/png;base64,'.base64_encode($letter).'">&nbsp;&nbsp;';
@@ -164,7 +197,7 @@ if(@$_GET['action'] == 'collect') {
     //echo '<div style="padding: 10px; background: #ccc"><img style="width: 90px; height: 30px;" src="data:image/png;base64,'.base64_encode($image).'"></div>';
     }
 } else if(@$_GET['action'] == 'captcha') {
-	Header("Content-type: image/png");
+	header("Content-type: image/png");
 	$captcha = $http -> get('http://check.gibdd.ru/proxy/captcha.jpg?'.$timestamp);
 	preg_match('/JSESSIONID=(\w{32})/', $captcha -> headers, $matches);
 	echo $captcha -> body;
@@ -173,8 +206,11 @@ if(@$_GET['action'] == 'collect') {
     header('Content-Type: application/json; charset=utf-8');
 	//var_dump($http -> post('http://check.gibdd.ru/proxy/check/auto/dtp', 'vin=GX90-3079813&captchaWord=49560&checkType=aiusdtp'))
 	echo($http -> post('http://check.gibdd.ru/proxy/check/auto/dtp', 'vin=GX90-3079813&captchaWord='.$_GET['captcha'].'&checkType=aiusdtp') -> body);
-} else if(@$_GET['action'] == 'fann') {
-    neuro();
+} else if(@$_GET['action'] == 'train') {
+    train();
 } else if(@$_GET['action'] == 'test') {
     test();
+} else if(@$_GET['action'] == 'symbol') {
+    $image = new Imagick('collect/'.$_GET['image'].'.png');
+    getSymbol(prepocessImage($image), $_GET['number']);
 }
