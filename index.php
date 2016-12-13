@@ -225,7 +225,8 @@ class Anticap {
         echo '<img src="data:image/png;base64,'. base64_encode($this -> image -> getImageBlob()) .'">';
     }
     
-    public function map($fileName) {
+    public function map($fileName = null, $write = true) {
+        if(!is_null($fileName))
         $this -> loadImage($fileName) -> preprocess();
         
         $draw = new ImagickDraw();
@@ -268,7 +269,8 @@ class Anticap {
                 $segment -> cropImage(20, 60, $offset + 9 , 0);
                 //$segment -> setImageExtent(20, 30);
                 $segment -> extentImage(20, 30, 0, 0);
-                $segment -> writeImage('big/'.rand(0, 9999).'.png');
+                $this -> test($segment);
+                //$segment -> writeImage('big/'.rand(0, 9999).'.png');
                 //echo '<br>';
                 //echo '<img src="data:image/png;base64,'. base64_encode($segment -> getImageBlob()) .'">';
                 $offset += 20;
@@ -293,7 +295,7 @@ class Anticap {
                 
                 //$segment -> setImageExtent(20, 30);
                 $segment -> extentImage(20, 30, 0, 0);
-                $segment -> writeImage('small/'.rand(0, 9999).'.png');
+                //$segment -> writeImage('small/'.rand(0, 9999).'.png');
                 
                 /*
                 echo '<br>';
@@ -335,7 +337,7 @@ class Anticap {
         //}
         } while($count < 5);
         
-        echo json_encode($segments);
+        //echo json_encode($segments);
         
         $this -> image -> drawImage($draw);
         
@@ -348,8 +350,8 @@ class Anticap {
         }
     }
 
-    function getArrayOfPixels($file) {
-        $image = new Imagick($file);
+    function getArrayOfPixels($image) {
+        //$image = new Imagick($file);
 
         $iterator = $image -> getPixelIterator();
         $arr = [];
@@ -383,7 +385,30 @@ class Anticap {
         }
         */
     }
+
+    public function test($segment) {
+        $ann = fann_create_from_file(dirname(__FILE__) . "/config.net");
+
+        //$input = array_fill(0, 540, rand(0, 1));
+        $input = $this -> getArrayOfPixels($segment);
+
+        $calc_out = fann_run($ann, $input);
+        // var_dump($calc_out);
+        $val = null;
+        $max = null;
+        foreach ($calc_out as $i => $out) {
+            if($out > $max) {
+                $max = $out;
+                $val = $i;
+            }
+        }
+
+        echo strval($val).' ';
+        
+        fann_destroy($ann);
+    }
     
+    /*
     public function test($fileName) {
         $ann = fann_create_from_file(dirname(__FILE__) . "/config.net");
 
@@ -405,6 +430,7 @@ class Anticap {
         die();
         fann_destroy($ann);
     }
+    */
     
     public function generateTrainFile() {
         $array = [];
@@ -434,8 +460,8 @@ class Anticap {
     }
     
     public function testOnLiveData() {
-        //$captcha = file_get_contents('http://check.gibdd.ru/proxy/captcha.jpg');
-        //file_put_contents('test.png', $captcha);
+        $captcha = file_get_contents('http://check.gibdd.ru/proxy/captcha.jpg');
+        file_put_contents('test.png', $captcha);
         
         $this -> loadImage('test.png');
         $this -> preprocess() -> map();
