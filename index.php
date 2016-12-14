@@ -1,5 +1,6 @@
 <?php
 require_once('http.php');
+require_once('ann.php');
 set_time_limit(0);
 error_reporting(E_ALL);
 $http = new Http();
@@ -15,7 +16,17 @@ class Anticap {
      * @var Imagick 
      */
     private $image;
+    /**
+     * @var Ann
+     */
     private $ann;
+    
+    private function getAnnInstance() {
+        if(!$this -> ann) {
+            $this -> ann = new Ann();
+        }
+        return $this -> ann;
+    }
     
     private function loadImage($fileName) {
         //$this -> image = new Imagick('collect/'.$fileName);
@@ -41,6 +52,8 @@ class Anticap {
     }
     
     public function map($fileName = null, $write = true, $visualize = true) {
+        $this -> getAnnInstance() -> load('ann.net');
+        
         if(!is_null($fileName))
         $this -> loadImage($fileName) -> preprocess();
         
@@ -86,7 +99,10 @@ class Anticap {
                 $segment -> cropImage(20, 60, $offset + 9 , 0);
                 //$segment -> setImageExtent(20, 30);
                 $segment -> extentImage(20, 30, 0, 0);
-                $result .= $this -> test($segment);
+                //$result .= $this -> test($segment);
+                
+                //$result .= $this -> getAnnInstance() -> test($this -> getArrayOfPixels($segment))[0];
+                $result .= array_keys($this -> getAnnInstance() -> test($this -> getArrayOfPixels($segment)))[0];
                 
                 if($write) {
                     $segment -> writeImage('big/'.rand(0, 9999).'.png');
@@ -126,7 +142,10 @@ class Anticap {
                 if($write) {
                     $segment->writeImage('small/' . rand(0, 9999) . '.png');
                 }
-                $result .= $this -> test($segment);
+                
+                $result .= array_keys($this -> getAnnInstance() -> test($this -> getArrayOfPixels($segment)))[0];
+                
+                //$result .= $this -> test($segment);
                 
                 if($visualize) {
                     echo '<br>';
@@ -325,97 +344,7 @@ class Anticap {
     }
     
     public function train() {
-
-        set_time_limit(0);
-
-
-        $max_epochs = 50000;
-        $epochs_between_reports = 1000;
-        $desired_error = 0.001;
-        $ann = fann_create_standard(7, 600, 100, 100, 100, 100, 100, 10);
-        
-        fann_set_activation_function_hidden($ann, FANN_SIGMOID_SYMMETRIC);
-        fann_set_activation_function_output($ann, FANN_SIGMOID_SYMMETRIC);
-        fann_set_training_algorithm($ann, FANN_TRAIN_RPROP);
-        fann_set_train_stop_function($ann, FANN_STOPFUNC_MSE);
-        
-        if (fann_train_on_file($ann, 'train.dat', $max_epochs, $epochs_between_reports, $desired_error)) {
-            fann_save($ann, dirname(__FILE__) . "/config.net");
-        }
-
-        fann_destroy($ann);
-        die();
-        
-        
-        
-        $bigDir = scandir('big');
-        array_shift($bigDir);
-        array_shift($bigDir);
-        //var_dump($bigDir);
-        $fileName = $bigDir[0];
-        
-        if(@isset($_POST['value'])) {
-            ini_set('memory_limit','2048M');
-            $value = $_POST['value'];
-            $max_epochs = 50000; //50000
-            $epochs_between_reports = 1000;
-            $desired_error = 0.001;
-            $ann = fann_create_standard(3, 600, 300, 10);
-            fann_set_activation_function_hidden($ann, FANN_SIGMOID_SYMMETRIC);
-            fann_set_activation_function_output($ann, FANN_SIGMOID_SYMMETRIC);
-            
-            /*
-            if(file_exists('data.net')) {
-                $ann = fann_create_from_file(dirname(__FILE__) . "/config.net");
-                
-            }
-            */
-
-            if (fann_train_on_file($ann, 'train.dat', $max_epochs, $epochs_between_reports, $desired_error)) {
-                fann_save($ann, dirname(__FILE__) . "/config.net");
-            }
-            
-            fann_destroy($ann);
-            
-            return true;
-            
-            $val = array_fill(0, 10, -1);
-            $val[$value] = 1;
-            
-            //var_dump($val);die();
-            //var_dump($this -> getArrayOfPixels('big/'.$fileName));
-            //die();
-            /*
-            for($i = 0; $i < $max_epochs; $i++) {
-                if (fann_train($ann, $this -> getArrayOfPixels('big/'.$fileName), $val)) {
-                    fann_save($ann, dirname(__FILE__) . "/data.net");
-              
-                }
-            }
-            */
-
-            $dat = $this -> getArrayOfPixels('big/'.$fileName);
-
-            //$train_data = fann_create_train_from_callback($num_data, $num_input, $num_output, "create_train_callback");
-
-            //create_train_callback(1, 600, 1);
-            
-            //fann_save_train(fann_create_train_from_callback() {}, 'train.dat');
-            //fann_save($ann, dirname(__FILE__) . "/data.net");
-            //unlink('big/'.$fileName);
-            //header('Refresh:0');
-        } else {
-            
-            echo <<<FORM
-    <form method="post">
-        <img src="big/{$fileName}">
-        <input type="hidden" name="filename" value="{$fileName}"><br>
-        <input type="text" name="value">
-        <input type="submit" name="post">
-    </form>
-FORM;
-
-        }
+       $this -> getAnnInstance() -> create([600, 10, 10, 10, 10]) -> train('train.dat', 'ann.net');
     }
     
     public function preprocess() {
@@ -434,11 +363,15 @@ FORM;
             $action = $_GET['action'];
             
             if(method_exists($this, $action)) {
-                $args = new ReflectionMethod($this, $action);
+                $method = new ReflectionMethod($this, $action);
+                if(!$method -> isPublic()) {
+                    throw new Exception('Данный метод не является действием');
+                }
+                //$args = new ReflectionMethod($this, $action);
                 $params = [];
                 //var_dump($args-> getParameters()[0] -> getDefaultValue());die();
                 
-                foreach($args -> getParameters() as $arg) {
+                foreach($method -> getParameters() as $arg) {
                     try {
                         $arg -> getDefaultValue();
                         if(isset($_GET[strtolower($arg -> name)])) {
@@ -454,7 +387,7 @@ FORM;
                     
                 call_user_func_array([$this, $action], $params);
             } else {
-                die('Нет такого метода');
+                throw new Exception('Нет такого действия');
             }
         }
     }

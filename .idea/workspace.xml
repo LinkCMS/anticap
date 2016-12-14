@@ -2,497 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0eab57a-86e1-4b17-9ff4-3085713f1a2c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/1070.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/1205.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/238.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/37.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/445.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/535.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/561.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/595.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/6590.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/6610.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/6722.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/6771.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/6875.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/6881.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/6998.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/8436.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/8699.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/8967.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/9076.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/9237.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/9404.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/9761.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/0/9875.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/1336.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/1350.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/156.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/1564.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/1667.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/1692.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/1835.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/1907.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/199.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/2150.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/2369.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/2744.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/3003.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/3105.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/3308.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/3957.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/4005.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/426.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/4309.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/4651.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/4704.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/4732.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/4794.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/4800.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/4804.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/5095.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/5177.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/6041.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/6107.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/6301.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/6603.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/6900.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/6940.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/7384.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/87.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/1/947.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/1272.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/182.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/2098.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/231.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/232.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/4736.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/4982.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/5528.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/5598.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/5905.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/6265.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/638.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/6552.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/6668.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/6760.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/7087.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/7349.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/7397.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/7492.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/7585.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/7730.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/7820.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/8033.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/8091.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/8138.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/8202.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/8494.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/8664.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/8721.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/876.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/8964.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/8985.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/9645.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/9682.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/2/9799.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/1339.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/1619.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/1675.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/2054.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/2203.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/2396.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/244.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/2449.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/2651.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/3559.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/3583.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/374.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/394.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/4206.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/4340.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/4740.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/475.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/4940.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/54.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/5719.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/601.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/6073.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/7038.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/7288.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/7297.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/741.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/7418.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/7583.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/7659.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/7955.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/842.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/8493.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/852.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/8867.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/8968.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/9171.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/9823.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/4/9934.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/5/1134.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/5/2002.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/5/2151.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/5/2314.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/5/2349.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/5/352.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/5/490.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/5/596.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/5/93.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/6/100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/6/113.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/6/2116.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/6/2274.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/6/2319.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/6/2363.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/6/2375.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/6/2504.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/6/2536.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/6/4758.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/6/5062.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/6/777.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/6/813.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/1072.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/1112.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/1561.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/1809.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/1983.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/1984.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/2062.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/2575.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/2738.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/2992.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/3201.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/3239.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/3258.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/3585.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/3634.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/4029.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/4181.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/4279.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/4537.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/4636.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/7/720.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/1087.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/1176.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/1267.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/1437.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/2339.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/3500.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/3592.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/3778.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/4171.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/4224.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/4556.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/4682.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/5225.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/6520.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/6588.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/6842.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/7086.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/7366.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/838.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/8/908.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/1057.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/121.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/149.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/1554.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/159.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/1609.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/2125.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/2595.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/2629.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/2656.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/2813.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/2878.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/3701.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/3833.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/406.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/438.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/4505.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/4628.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/834.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/878.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/small/9/881.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/1032.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/1094.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/1196.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/1198.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/1211.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/131.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/14.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/1432.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/1441.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/1446.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/1530.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/1541.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/1590.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/1666.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/1684.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/1781.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/1849.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/1887.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/1890.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/1920.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/1930.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2025.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2252.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2316.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2506.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2522.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2534.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2562.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2572.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2658.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2681.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2710.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2712.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2724.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2725.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2733.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2736.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2837.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2848.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/288.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2893.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2904.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2919.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/2986.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3030.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3040.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3054.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3091.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3116.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3132.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3159.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3167.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3179.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3251.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3257.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3269.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3356.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3373.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3386.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3398.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3447.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3468.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3501.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3618.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3636.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3654.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3657.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3704.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3845.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3856.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3870.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3879.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3899.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/3928.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4039.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4042.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4048.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4126.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4192.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4237.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4241.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4254.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4286.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4294.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4297.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4341.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4351.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4363.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4366.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4392.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4428.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4445.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4500.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4548.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4666.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4699.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4715.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4761.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4850.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4893.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/4974.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5039.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5049.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5082.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5178.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/519.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5220.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5261.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5264.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5320.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5338.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5359.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5469.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5480.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5604.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5613.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5645.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5668.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5682.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5686.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5710.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5745.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5764.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5768.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5769.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5803.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5810.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5825.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5837.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5844.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5848.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5883.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5942.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5949.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5951.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/5960.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6035.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6051.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6062.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6081.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6091.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6137.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6142.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6164.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6201.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6271.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6325.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6341.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6351.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6514.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6523.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6541.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6560.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6571.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6592.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6605.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6627.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6748.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6782.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6896.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/6957.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7021.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7056.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7081.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7120.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7186.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7220.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7249.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7251.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7401.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7416.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7430.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7455.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7515.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7548.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7554.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7565.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7582.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7621.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7653.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7758.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7773.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7779.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7799.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7855.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7870.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7921.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7939.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7945.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7954.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7974.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7987.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7988.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/7998.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/807.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8075.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8088.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8121.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8130.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8177.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8179.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8220.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8248.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8327.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8365.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8384.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8395.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8442.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8454.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8456.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8463.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8484.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8492.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8495.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8525.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8583.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8616.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8621.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8634.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8641.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8642.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8646.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8666.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8782.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8813.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8835.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8880.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8912.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8925.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8932.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/8982.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9016.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9039.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9091.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9164.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9234.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9254.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9277.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9301.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9307.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9327.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9335.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9350.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9353.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9377.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9387.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9409.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9427.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9455.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9473.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9522.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9546.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9562.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9590.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9613.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9707.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9731.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9815.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9816.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9852.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9879.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9914.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9922.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9944.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/small/9998.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/big/495.png" afterPath="$PROJECT_DIR$/big/495.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/big/9999.png" afterPath="$PROJECT_DIR$/big/9999.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/small/2322.png" afterPath="$PROJECT_DIR$/small/2322.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/small/6303.png" afterPath="$PROJECT_DIR$/small/6303.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.net" afterPath="$PROJECT_DIR$/config.net" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ann.php" afterPath="$PROJECT_DIR$/ann.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train.dat" afterPath="$PROJECT_DIR$/train.dat" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -516,11 +28,9 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-              <folding>
-                <marker date="1481698012517" expanded="true" signature="13114:13315" ph="..." />
-              </folding>
+            <state relative-caret-position="704">
+              <caret line="389" column="56" selection-start-line="389" selection-start-column="56" selection-end-line="389" selection-end-column="56" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -528,8 +38,8 @@
       <file leaf-file-name="ann.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ann.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+            <state relative-caret-position="68">
+              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -564,8 +74,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/http.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/ann.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -580,10 +90,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1920" />
-    <option name="y" value="9" />
-    <option name="width" value="1920" />
-    <option name="height" value="1084" />
+    <option name="x" value="1910" />
+    <option name="y" value="-1" />
+    <option name="width" value="1940" />
+    <option name="height" value="1104" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -610,7 +120,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -632,6 +141,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -689,24 +199,25 @@
       <workItem from="1481186973519" duration="386000" />
       <workItem from="1481244935067" duration="19303000" />
       <workItem from="1481510398324" duration="127000" />
-      <workItem from="1481521739244" duration="49923000" />
+      <workItem from="1481521739244" duration="50927000" />
+      <workItem from="1481702687331" duration="2614000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82894000" />
+    <option name="totallyTimeSpent" value="86512000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="9" width="1920" height="1084" extended-state="6" />
+    <frame x="1910" y="-1" width="1940" height="1104" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17716116" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17929563" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -718,25 +229,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25506938" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -758,9 +250,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1481698012517" expanded="true" signature="13114:13315" ph="..." />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -784,9 +282,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1481698012517" expanded="true" signature="13114:13315" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -810,9 +306,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1481698012517" expanded="true" signature="13114:13315" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -836,9 +330,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1481698012517" expanded="true" signature="13114:13315" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -862,9 +354,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1481698012517" expanded="true" signature="13114:13315" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -888,9 +378,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1481698012517" expanded="true" signature="13114:13315" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -914,9 +402,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1481698012517" expanded="true" signature="13114:13315" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -940,9 +426,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1481698012517" expanded="true" signature="13114:13315" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -966,9 +450,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1481698012517" expanded="true" signature="13114:13315" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -983,14 +465,6 @@
     <entry file="file://$PROJECT_DIR$/simple_html_dom.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="1741" column="2" selection-start-line="1741" selection-start-column="2" selection-end-line="1741" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simple_html_dom.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28951">
           <caret line="1741" column="2" selection-start-line="1741" selection-start-column="2" selection-end-line="1741" selection-end-column="2" />
           <folding />
         </state>
@@ -1020,21 +494,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/simple_html_dom.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28951">
+          <caret line="1741" column="2" selection-start-line="1741" selection-start-column="2" selection-end-line="1741" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ann.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+        <state relative-caret-position="68">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-          <folding>
-            <marker date="1481698012517" expanded="true" signature="13114:13315" ph="..." />
-          </folding>
+        <state relative-caret-position="704">
+          <caret line="389" column="56" selection-start-line="389" selection-start-column="56" selection-end-line="389" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
