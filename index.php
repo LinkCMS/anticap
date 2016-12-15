@@ -357,8 +357,14 @@ class Anticap {
         return $this;
     }
     
+    public function exception(Exception $e) {
+        die($e -> getMessage());
+    }
+    
     public function __construct()
     {
+        set_exception_handler([$this, 'exception']);
+        
         if(isset($_GET['action'])) {
             $action = $_GET['action'];
             
