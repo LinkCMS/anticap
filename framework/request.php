@@ -18,7 +18,8 @@ class Request {
             }
         }
         
-        if($this ->action = @$request['action']) {
+        if($this -> action = @$request['action'] ? : 'index') {
+            //var_dump($this -> action);die();
             if(method_exists($controller, $this ->action)) {
                 $method = new ReflectionMethod($controller, $this -> action);
                 if(!$method -> isPublic()) {
@@ -58,40 +59,6 @@ class Request {
                 throw new Exception('Нет такого действия');
             }
         }
-        
-        /*
-        
-        if(isset($_GET['action'])) {
-            $action = $_GET['action'];
-
-            if(method_exists($this, $action)) {
-                $method = new ReflectionMethod($this, $action);
-                if(!$method -> isPublic()) {
-                    throw new Exception('Данный метод не является действием');
-                }
-                
-                $params = [];
-
-                foreach($method -> getParameters() as $arg) {
-                    try {
-                        $arg -> getDefaultValue();
-                        if(isset($_GET[strtolower($arg -> name)])) {
-                            $params[] = $_GET[strtolower($arg -> name)];
-                        }
-                    } catch (Exception $e) {
-                        $params[] = $_GET[strtolower($arg -> name)];
-                    }
-                    //if(!@$arg -> getDefaultValue()) {
-
-                    //}
-                }
-
-                call_user_func_array([$this, $action], $params);
-            } else {
-                throw new Exception('Нет такого действия');
-            }
-        }
-        */
     }
     
     public function get($param = null) {
