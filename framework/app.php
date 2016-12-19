@@ -7,6 +7,7 @@ class App {
     public $requset;
     public $response;
     public static $instance;
+    public static $config;
     
     public function exception(Exception $e) {
         die($e -> getMessage());
@@ -23,6 +24,7 @@ class App {
     }
     
     public function run($config) {
+        self::$config = $config;
         //$this -> response -> send();
         call_user_func_array([$this -> requset -> controller, $this -> requset -> action], $this -> requset -> params);
     }

@@ -21,7 +21,7 @@ class Http {
     {
         curl_setopt($this -> connection, CURLOPT_URL, $query);
         curl_setopt($this -> connection, CURLOPT_RETURNTRANSFER, true);
-        return new Response(curl_exec($this -> connection), $this -> getInfo());
+        return new HttpResponse(curl_exec($this -> connection), $this -> getInfo());
     }
 
     public function getInfo()
@@ -39,11 +39,12 @@ class Http {
         curl_setopt($this -> connection, CURLOPT_URL, $url);
         curl_setopt($this -> connection, CURLOPT_POST, true);
         curl_setopt($this -> connection, CURLOPT_POSTFIELDS, $data);
-        return new Response(curl_exec($this -> connection), $this -> getInfo());
+        
+        return new HttpResponse(curl_exec($this -> connection), $this -> getInfo());
     }
 }
 
-class Response {
+class HttpResponse {
     public $headers;
     public $body;
     public $html;

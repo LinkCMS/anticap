@@ -66,7 +66,7 @@ class Request {
             return $_GET;
         }
         else {
-            return $_GET[$param];
+            return @$_GET[$param] ? : null;
         }
     }
     
@@ -75,7 +75,7 @@ class Request {
             return $_POST;
         }
         else {
-            return $_POST[$param];
+            return @$_POST[$param] ? : null;
         }
     }
 }
