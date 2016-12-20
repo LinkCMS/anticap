@@ -41,8 +41,7 @@ class Index extends Controller  {
             $antigate = explode('|', $antigate);
             
             $item -> value = @$antigate[1];
-            
-            //var_dump($item -> save());
+            var_dump($item -> save());
             //var_dump($item -> id);
         }
         //var_dump($model[0] -> id);

@@ -47,6 +47,7 @@ class MySQL {
     public function insert() {
         //var_dump()
         //var_dump($this -> model -> getClassName());
+        
         $this -> sql = 'INSERT INTO `'.$this -> tableName.'` ('.implode(', ', array_keys($this -> model -> attributes)).') VALUES ('.implode(', ', array_values($this -> model -> attributes)).')';
 
         return $this -> execute();
@@ -63,12 +64,18 @@ class MySQL {
     public function update($model) {
         $attributes = [];
         foreach ($model -> attributes as $key => $val) {
+            if($model -> oldAttributes[$key] != $val)
             $attributes[] = "`{$key}` = {$val}";
         }
         
         //var_dump($model -> oldAttributes);die();
 
-        $this -> sql = 'UPDATE `'.$this -> tableName.'` SET '.implode(', ', $attributes).' WHERE `id` = '.$model -> id;
+        if(count($attributes)) {
+            $this -> sql = 'UPDATE `'.$this -> tableName.'` SET '.implode(', ', $attributes).' WHERE `id` = '.$model -> id;
+            return $this -> execute();
+        } else {
+            //throw new Exception('Модель не изменилась');
+        }
         //return $this -> execute();
     }
     
