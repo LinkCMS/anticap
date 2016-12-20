@@ -26,6 +26,7 @@ class Model {// extends MySQL {
         self::$isNewRecord = $isNewRecord;
         //$this -> isNewRecord = true;
         //self::$isNewRecord = true;
+        //var_dump(static::getInstance());die();
         return $this -> getConnection();
     }
     
@@ -78,7 +79,7 @@ class Model {// extends MySQL {
             //var_dump(self::$connection);
             return self::$connection -> insert();
         } else {
-            return self::$connection -> update();
+            return self::$connection -> update($this);
         }
     }
 }

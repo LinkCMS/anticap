@@ -33,15 +33,16 @@ class Index extends Controller  {
         
         //$model = TrainSet::find() -> select() -> where('value = "" OR value IS NULL') -> all();
         $model = TrainSet::find() -> select() -> where('value = "" OR value IS NULL') -> all();
-        var_dump($model);die();
+        
         foreach ($model as $item) {
             
             $http = new Http();
             $antigate = $http -> get('http://rucaptcha.com/res.php?key=d6c189ec8213ec0a00c39c8cbdfd2fc0&action=get&id='.$item -> antigate_id) -> body;
             $antigate = explode('|', $antigate);
-            //$item -> value = $antigate[1];
-//            $item -> save();
-            var_dump($item -> id);
+            
+            $item -> value = @$antigate[1];
+            
+            var_dump($item -> save());
             //var_dump($item -> id);
         }
         //var_dump($model[0] -> id);
@@ -114,8 +115,9 @@ echo(base64_decode($image[0]['content']));
         $antigate = explode('|', $antigate);
         
         $trainset = new TrainSet();
+        
         $trainset -> content = $image;
         $trainset -> antigate_id = $antigate[1];
-        $trainset -> save();
+        var_dump($trainset -> save());
     }
 }

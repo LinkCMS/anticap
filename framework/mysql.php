@@ -60,14 +60,14 @@ class MySQL {
     }
 
 
-    public function update() {
-        var_dump($this -> model);die();
+    public function update($model) {
         $attributes = [];
-        foreach ($this -> model -> attributes as $key => $val) {
+        foreach ($model -> attributes as $key => $val) {
             $attributes[] = "`{$key}` = {$val}";
         }
-        
-        $this -> sql = 'UPDATE `'.$this -> tableName.'` SET '.implode(', ', $attributes).' WHERE `id` = '.$this -> attributes['id'];
+
+
+        $this -> sql = 'UPDATE `'.$this -> tableName.'` SET '.implode(', ', $attributes).' WHERE `id` = '.$model -> id;
         return $this -> execute();
     }
     
