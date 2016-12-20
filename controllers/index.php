@@ -5,7 +5,7 @@ require_once('models/TrainSet.php');
 require_once('http.php');
 
 class Index extends Controller  {
-    public function getCaptchaStatus($captchaId) {
+    public function getCaptchaStatus() {
         /*
         $http = new Http();
         $antigate = $http -> get('http://rucaptcha.com/res.php?key=d6c189ec8213ec0a00c39c8cbdfd2fc0&action=get&id='.$captchaId) -> body;
@@ -13,8 +13,55 @@ class Index extends Controller  {
         var_dump($antigate[1]);
         */
         
+        //var_dump(TrainSet::getInstance() -> select() -> where('value IS NULL') -> getSql());
+        //$model = TrainSet::find() -> select() -> where('value IS NULL') -> fetchAll();
+        
+        /*
         $model = TrainSet::find() -> select() -> where('value IS NULL') -> fetchAll();
-        $model -> value = '123';
+        var_dump($model);
+        */
+        
+        /*
+        $model = new TrainSet();
+        $model -> value = '73477';
+        var_dump($model -> save());
+        die();
+        */
+        
+        
+        
+        
+        //$model = TrainSet::find() -> select() -> where('value = "" OR value IS NULL') -> all();
+        $model = TrainSet::find() -> select() -> where('value = "" OR value IS NULL') -> all();
+        var_dump($model);die();
+        foreach ($model as $item) {
+            
+            $http = new Http();
+            $antigate = $http -> get('http://rucaptcha.com/res.php?key=d6c189ec8213ec0a00c39c8cbdfd2fc0&action=get&id='.$item -> antigate_id) -> body;
+            $antigate = explode('|', $antigate);
+            //$item -> value = $antigate[1];
+//            $item -> save();
+            var_dump($item -> id);
+            //var_dump($item -> id);
+        }
+        //var_dump($model[0] -> id);
+        
+        
+        /*
+        $model = TrainSet::find() -> select() -> where('value IS NULL') -> all();
+        $model[0] -> value = '12345';
+        var_dump($model[0] -> save());
+        */
+        
+        
+        //$model[0] -> value = '12345';
+        
+        
+        //$model[0] -> value = '123';
+        //$model[0] -> value = 'asd';
+        //var_dump($model[0]);
+        //$model[0] -> save();
+        
     }
     
     public function sendToAntigate() {
@@ -69,6 +116,6 @@ echo(base64_decode($image[0]['content']));
         $trainset = new TrainSet();
         $trainset -> content = $image;
         $trainset -> antigate_id = $antigate[1];
-        $trainset -> insert();
+        $trainset -> save();
     }
 }
