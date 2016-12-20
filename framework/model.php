@@ -7,6 +7,7 @@ class Model {// extends MySQL {
     protected static $isNewRecord = false;
     public $attributes = [];
     private static $instance;
+    public $oldAttributes = [];
     
     public function isNewRecord() {
         return self::$isNewRecord;
@@ -20,6 +21,15 @@ class Model {// extends MySQL {
         return static::class;
     }
     
+    public function load($attributes) {
+        foreach($attributes as $key => $val) {
+            $this -> $key = $val;
+        }
+
+        $this -> oldAttributes = $this -> attributes;
+        //var_dump($this -> oldAttributes);
+    }
+    
     public function __construct($isNewRecord = true)
     {
         self::$instance = $this;
@@ -27,6 +37,8 @@ class Model {// extends MySQL {
         //$this -> isNewRecord = true;
         //self::$isNewRecord = true;
         //var_dump(static::getInstance());die();
+        //$this -> oldAttributes = $this -> attributes;
+        
         return $this -> getConnection();
     }
     
@@ -58,7 +70,7 @@ class Model {// extends MySQL {
         //self::$connection -> setAttribute($key, $value);
         $this -> attributes[$key] = $value;
         */
-
+        
         if(!$attribute = self::$connection -> schema[$key]) {
             throw new Exception('У модели нет атрибута с таким именем: <b>'.$key.'</b>');
         }
@@ -70,8 +82,10 @@ class Model {// extends MySQL {
                 $value = "'{$value}'";
                 break;
         }
-
+        
+        
         $this -> attributes[$key] = $value;
+        //$this -> oldAttributes[$key] = $value;
     }
     
     public function save() {

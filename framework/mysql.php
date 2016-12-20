@@ -65,10 +65,11 @@ class MySQL {
         foreach ($model -> attributes as $key => $val) {
             $attributes[] = "`{$key}` = {$val}";
         }
-
+        
+        //var_dump($model -> oldAttributes);die();
 
         $this -> sql = 'UPDATE `'.$this -> tableName.'` SET '.implode(', ', $attributes).' WHERE `id` = '.$model -> id;
-        return $this -> execute();
+        //return $this -> execute();
     }
     
     public function delete() {
@@ -115,16 +116,19 @@ class MySQL {
             if($this -> modelName) {
                 $items = [];
     
-                foreach ($statement -> fetchAll(PDO::FETCH_OBJ) as $i => $item) {
+                foreach($statement -> fetchAll(PDO::FETCH_OBJ) as $i => $item) {
                     //var_dump($item);die();
     
                     //var_dump($ts);
                     
                     $items[$i] = new $this -> modelName(false);
-    
+
+                    $items[$i] -> load($item);
+                    /*
                     foreach ($item as $key => $val) {
                         $items[$i] -> $key = $val;
                     }
+                    */
                 }
                 
                 return $items;
