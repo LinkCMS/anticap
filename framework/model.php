@@ -60,7 +60,7 @@ class Model {// extends MySQL {
 
     public function __get($key) {
         //return self::$connection -> getAttribute($key);
-        return trim($this -> attributes[$key], "'");
+        return $this -> attributes[$key];
     }
     
     public function __set($key, $value) {
@@ -75,14 +75,15 @@ class Model {// extends MySQL {
             throw new Exception('У модели нет атрибута с таким именем: <b>'.$key.'</b>');
         }
 
+        /*
         switch($attribute['type']) {
-            case 'blob':
+            //case 'blob':
             case 'varchar':
                 //$value = trim($value, "'");
                 $value = "'{$value}'";
                 break;
         }
-        
+        */
         
         $this -> attributes[$key] = $value;
         //$this -> oldAttributes[$key] = $value;

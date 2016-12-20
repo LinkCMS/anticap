@@ -48,9 +48,38 @@ class MySQL {
         //var_dump()
         //var_dump($this -> model -> getClassName());
         
-        $this -> sql = 'INSERT INTO `'.$this -> tableName.'` ('.implode(', ', array_keys($this -> model -> attributes)).') VALUES ('.implode(', ', array_values($this -> model -> attributes)).')';
+        $this -> sql = 'INSERT INTO `'.$this -> tableName.'` ('.implode(', ', array_keys($this -> model -> attributes)).') VALUES ('.implode(', ', array_map(function($value) {
+                return ':'.$value;
+            }, array_keys($this -> model -> attributes))).')';
+        //$this -> sql = 'INSERT INTO `'.$this -> tableName.'` ('.implode(', ', array_keys($this -> model -> attributes)).') VALUES ('.array_map(function($item) {}, $this -> model -> attributes).')';
 
-        return $this -> execute();
+        $statement = $this -> pdo -> prepare($this -> sql);
+
+
+        foreach ($this -> model -> attributes as $key => $val) {
+            //var_dump($this -> schema[$key]['type']);
+
+            switch($this -> schema[$key]['type']) {
+                case 'blob':
+                    $type = PDO::PARAM_LOB;
+                    break;
+                case 'int':
+                    $type = PDO::PARAM_INT;
+                    break;
+                case 'varchar':
+                    $type = PDO::PARAM_STR;
+                    break;
+            }
+
+            $statement -> bindValue(':'.$key, $val, $type);
+            //var_dump($key);
+        }
+        //$statement -> bindParam(':image', $this -> model -> attributes['image'], PDO::PARAM_LOB);
+        return $statement -> execute();
+        die();
+        //return $this -> execute();
+
+
         //var_dump($this -> sql);
         //var_dump(${$this -> model}::$attributes);
         

@@ -104,19 +104,22 @@ echo(base64_decode($image[0]['content']));
         
         //return false;
         $http = new Http();
-        $image = base64_encode($http -> get('http://check.gibdd.ru/proxy/captcha.jpg') -> body);
+        //$image = base64_encode($http -> get('http://check.gibdd.ru/proxy/captcha.jpg') -> body);
+        $image = base64_encode(file_get_contents('collect/0.png'));
+/*
         $antigate = $http -> post('http://rucaptcha.com/in.php', [
             'method' => 'base64',
             'key' => 'd6c189ec8213ec0a00c39c8cbdfd2fc0',
             'body' => $image,
         ]) -> body;
-        
+
         $antigate = explode('|', $antigate);
-        
+*/
         $trainset = new TrainSet();
-        
-        $trainset -> content = $image;
-        $trainset -> antigate_id = $antigate[1];
+
+        $trainset -> image = base64_decode($image);
+        $trainset -> code = 'asdzx';
+        //$trainset -> antigate_id = $antigate[1];
         var_dump($trainset -> save());
     }
 }

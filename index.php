@@ -205,19 +205,29 @@ class Anticap {
 
         $success = 0;
         $error = 0;
+        $digits = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
         
         foreach ($dir as $file) {
             //$this -> loadImage('test/'.$file);
             //$this -> draw();
             $expected = str_replace('.png', '', $file);
-            if($this -> map('test/'.$file, false, false) == $expected) {
+            $resp = $this -> map('test/'.$file, false, false);
+            if($resp == $expected) {
                 $success++;
             } else {
+                for($i = 0; $i < 5; $i++) {
+                    if($resp[$i] != $expected[$i]) {
+                        $digits[$expected[$i]]++;
+                    }
+                }
                 $error++;
             }
         }
-        
+
+        echo(json_encode($digits));echo '<hr>';
+
         var_dump($success);
+        echo '<br>';
         var_dump($error);
     }
     
@@ -245,7 +255,7 @@ class Anticap {
 
     public function test($segment) {
         if(!$this -> ann) {
-            $this -> ann = fann_create_from_file(dirname(__FILE__) . "/config.net");
+            $this -> ann = fann_create_from_file(dirname(__FILE__) . "/ann.net");
         }
 
         //$input = array_fill(0, 540, rand(0, 1));
@@ -344,7 +354,7 @@ class Anticap {
     }
     
     public function train() {
-       $this -> getAnnInstance() -> create([600, 10, 10, 10, 10]) -> train('train.dat', 'ann.net');
+       $this -> getAnnInstance() -> create([600, 100, 100, 100, 10]) -> train('train.dat', 'ann.net');
     }
     
     public function preprocess() {
