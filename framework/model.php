@@ -33,6 +33,7 @@ class Model {// extends MySQL {
         if(!self::$connection) {
             self::$connection = new MySQL();
             self::$connection -> setTableName(static::$tableName);
+            self::$connection -> modelName = static::getClassName();
             self::$connection -> model = static::getInstance();
         }
         
@@ -46,11 +47,29 @@ class Model {// extends MySQL {
 
     public function __get($key) {
         //return self::$connection -> getAttribute($key);
-        return $this -> attributes[$key];
+        return trim($this -> attributes[$key], "'");
     }
     
     public function __set($key, $value) {
+        /*
+        var_dump(self::$connection -> schema);
+        die('asd');
         //self::$connection -> setAttribute($key, $value);
+        $this -> attributes[$key] = $value;
+        */
+
+        if(!$attribute = self::$connection -> schema[$key]) {
+            throw new Exception('У модели нет атрибута с таким именем: <b>'.$key.'</b>');
+        }
+
+        switch($attribute['type']) {
+            case 'blob':
+            case 'varchar':
+                //$value = trim($value, "'");
+                $value = "'{$value}'";
+                break;
+        }
+
         $this -> attributes[$key] = $value;
     }
     

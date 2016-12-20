@@ -7,8 +7,9 @@ class MySQL {
     private $sql;
     public $tableName;
     //public $attributes = [];
-    private $schema;
+    public $schema;
     public $model;
+    public $modelName;
     //public $resultSet;
     
     //public function __construct($host, $username, $password, $database) {
@@ -60,6 +61,7 @@ class MySQL {
 
 
     public function update() {
+        var_dump($this -> model);die();
         $attributes = [];
         foreach ($this -> model -> attributes as $key => $val) {
             $attributes[] = "`{$key}` = {$val}";
@@ -104,43 +106,32 @@ class MySQL {
     }
 
     public function all() {
-        //var_dump($this -> model);
         $statement = $this -> pdo -> prepare($this -> sql);
         $statement -> execute();
         
-        //return $statement -> fetchAll();
-        //$this -> attributes = $statement -> fetchAll(PDO::FETCH_ASSOC);
-        
-        if($this -> model) {
-            //$this -> attributes = $statement -> fetchAll(PDO::FETCH_CLASS, $this -> model, ['isNewRecord' => false]);
-            //return $statement -> fetchAll(PDO::FETCH_CLASS, $this -> model, ['isNewRecord' => false]);;
-
-            $items = [];
-            
-            foreach ($statement -> fetchAll(PDO::FETCH_OBJ) as $i => $item) {
-                //var_dump($item);die();
-        
-                //var_dump($ts);
-                
-                $items[$i] = new $this -> model();
-                
-                foreach ($item as $key => $val) {
-                    $items[$i] -> $key = $val;
+        if($this -> model) { // Инстанс модели уже существует (создаётся новая запись)
+            echo 'asd';
+        } else {
+            if($this -> modelName) {
+                $items = [];
+    
+                foreach ($statement -> fetchAll(PDO::FETCH_OBJ) as $i => $item) {
+                    //var_dump($item);die();
+    
+                    //var_dump($ts);
+                    
+                    $items[$i] = new $this -> modelName(false);
+    
+                    foreach ($item as $key => $val) {
+                        $items[$i] -> $key = $val;
+                    }
                 }
                 
+                return $items;
+            } else {
+                return $statement -> fetchAll(PDO::FETCH_ASSOC);
             }
-            return $items;
-            //return $items;
-            //var_dump($this -> attributes);die();
-            //return $statement -> fetchAll(PDO::FETCH_CLASS, $this -> model);
-            //return $statement -> fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            //return $statement -> fetchAll(PDO::FETCH_ASSOC);
-            return $statement -> fetchAll(PDO::FETCH_ASSOC);
-            //$this -> attributes = $statement -> fetchAll(PDO::FETCH_ASSOC);
         }
-        //return $this -> attributes;
-        //return $this;
     }
     
     public function one() {
