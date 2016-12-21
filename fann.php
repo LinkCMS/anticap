@@ -1,6 +1,6 @@
 <?php
 
-class Ann {
+class Fann {
     private $instance;
     private $maxEpochs = 50000;
     private $epochsBetweenReports = 1000;

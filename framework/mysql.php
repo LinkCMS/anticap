@@ -42,23 +42,16 @@ class MySQL {
         $this -> sql = 'SELECT '.implode(', ', $attibutes).' FROM '.$this -> tableName;
         return $this;
     }
-
-    //public function insert($attributes) {
-    public function insert() {
-        //var_dump()
-        //var_dump($this -> model -> getClassName());
-        
-        $this -> sql = 'INSERT INTO `'.$this -> tableName.'` ('.implode(', ', array_keys($this -> model -> attributes)).') VALUES ('.implode(', ', array_map(function($value) {
-                return ':'.$value;
-            }, array_keys($this -> model -> attributes))).')';
-        //$this -> sql = 'INSERT INTO `'.$this -> tableName.'` ('.implode(', ', array_keys($this -> model -> attributes)).') VALUES ('.array_map(function($item) {}, $this -> model -> attributes).')';
-
+    
+    public function prepare($attributes = null) {
         $statement = $this -> pdo -> prepare($this -> sql);
-
-
-        foreach ($this -> model -> attributes as $key => $val) {
-            //var_dump($this -> schema[$key]['type']);
-
+        //var_dump($this -> modelName);die();
+        
+        if(!$attributes) {
+            $attributes = $this -> model -> attributes;
+        }
+        
+        foreach($attributes as $key => $val) {
             switch($this -> schema[$key]['type']) {
                 case 'blob':
                     $type = PDO::PARAM_LOB;
@@ -72,11 +65,27 @@ class MySQL {
             }
 
             $statement -> bindValue(':'.$key, $val, $type);
-            //var_dump($key);
         }
+        
+        return $statement;
+    }
+
+    //public function insert($attributes) {
+    public function insert($model) {
+        //var_dump()
+        //var_dump($this -> model -> getClassName());
+        
+        $this -> sql = 'INSERT INTO `'.$this -> tableName.'` ('.implode(', ', array_keys($this -> model -> attributes)).') VALUES ('.implode(', ', array_map(function($value) {
+                return ':'.$value;
+            }, array_keys($this -> model -> attributes))).')';
+        //$this -> sql = 'INSERT INTO `'.$this -> tableName.'` ('.implode(', ', array_keys($this -> model -> attributes)).') VALUES ('.array_map(function($item) {}, $this -> model -> attributes).')';
+
+        $statement = $this -> prepare($model -> attributes);
+        
+        
         //$statement -> bindParam(':image', $this -> model -> attributes['image'], PDO::PARAM_LOB);
         return $statement -> execute();
-        die();
+        //return false;
         //return $this -> execute();
 
 
@@ -93,14 +102,19 @@ class MySQL {
     public function update($model) {
         $attributes = [];
         foreach ($model -> attributes as $key => $val) {
-            if($model -> oldAttributes[$key] != $val)
-            $attributes[] = "`{$key}` = {$val}";
+            if($model -> oldAttributes[$key] != $val) {
+                $attributes[] = "`{$key}` = :{$key}";
+            } else {
+                
+                unset($model -> attributes[$key]);
+            }
         }
-        
-        //var_dump($model -> oldAttributes);die();
 
         if(count($attributes)) {
-            $this -> sql = 'UPDATE `'.$this -> tableName.'` SET '.implode(', ', $attributes).' WHERE `id` = '.$model -> id;
+            $this -> sql = 'UPDATE `'.$this -> tableName.'` SET '.implode(', ', $attributes).' WHERE `id` = '.$model -> oldAttributes['id'];
+            $statement = $this -> prepare($model -> attributes);
+            return $statement -> execute();
+            die();
             return $this -> execute();
         } else {
             //throw new Exception('Модель не изменилась');

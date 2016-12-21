@@ -1,10 +1,111 @@
 <?php
 
 require_once('framework/controller.php');
-require_once('models/TrainSet.php');
+require_once('models/TrainingSet.php');
 require_once('http.php');
+require_once('captcha.php');
+require_once('fann.php');
 
 class Index extends Controller  {
+    public function generateTrainFile() {
+        set_time_limit(0);
+        $model = TrainingSet::find() -> select() -> all();
+
+        $trainingSet = null;
+        $trainingSet .= (count($model) * 5).' '.App::$config['fann']['inputs'].' 10';
+
+        foreach ($model as $i => $item) {
+            $captcha = new Captcha($item -> image);
+            $captcha -> preprocess();
+            $segments = $captcha -> map();
+            
+            foreach ($segments as $j => $segment) {
+            /*    
+                $segment -> draw();
+                continue;
+            */
+                $output = array_fill(0, 10, 0);
+                $trainingSet .= PHP_EOL.implode(' ', $segment -> getArrayOfPixels());
+                $output[$item -> code[$j]] = 1;
+                $trainingSet .= PHP_EOL.implode(' ', $output);
+            }
+        }
+
+        file_put_contents('train.dat', $trainingSet);
+    }
+    
+    public function train() {
+        set_time_limit(0);
+       
+        $fann = new Fann();
+        $fann -> create([App::$config['fann']['inputs'], 100, 100, 100, 10]);
+        $fann -> train('train.dat', App::$config['fann']['net']);
+    }
+    
+    public function test($input = []) {
+        $fann = new Fann();
+        $dir = scandir('test');
+        array_shift($dir);
+        array_shift($dir);
+        
+        $captcha = new Captcha(file_get_contents('test/'.$dir[array_rand($dir)]));
+        $captcha -> draw();
+        $fann -> load(App::$config['fann']['net']);
+        $captcha -> preprocess();
+        $segments = $captcha -> map();
+        foreach($segments as $segment) {
+            var_dump($fann -> test($segment -> getArrayOfPixels()));
+        }
+    }
+    
+    public function check() {
+        $dir = scandir('test');
+        array_shift($dir);
+        array_shift($dir);
+
+        $success = 0;
+        $error = 0;
+        $digits = array_fill(0, 10, 0);
+
+        foreach ($dir as $file) {
+            //$this -> loadImage('test/'.$file);
+            //$this -> draw();
+            $captcha = new Captcha(file_get_contents('test/'.$file));
+            $captcha -> preprocess();
+            
+            $expected = str_replace('.png', '', $file);
+            $segments = $captcha -> map();
+
+            $fann = new Fann();
+            $fann -> load(App::$config['fann']['net']);
+            $response = null;
+            
+            foreach($segments as $segment) {
+                $response .= key($fann -> test($segment -> getArrayOfPixels()));
+            }
+            
+            if($response == $expected) {
+                $success++;
+            } else {
+                for($i = 0; $i < 5; $i++) {
+                    if($response[$i] != $expected[$i]) {
+                        $digits[$expected[$i]]++;
+                    }
+                }
+                $error++;
+            }
+        }
+
+        //echo(json_encode($digits));echo '<hr>';
+        echo 'Digits errors: ';
+        var_dump($digits);
+
+        echo 'Success: ';
+        var_dump($success);
+        echo 'Errors: ';
+        var_dump($error);
+    }
+    
     public function getCaptchaStatus() {
         /*
         $http = new Http();
@@ -32,7 +133,7 @@ class Index extends Controller  {
         
         
         //$model = TrainSet::find() -> select() -> where('value = "" OR value IS NULL') -> all();
-        $model = TrainSet::find() -> select() -> where('value = "" OR value IS NULL') -> all();
+        $model = TrainingSet::find() -> select() -> where('`code` IS NULL') -> all();
         
         foreach ($model as $item) {
             
@@ -40,7 +141,7 @@ class Index extends Controller  {
             $antigate = $http -> get('http://rucaptcha.com/res.php?key=d6c189ec8213ec0a00c39c8cbdfd2fc0&action=get&id='.$item -> antigate_id) -> body;
             $antigate = explode('|', $antigate);
             
-            $item -> value = @$antigate[1];
+            $item -> code = @$antigate[1];
             var_dump($item -> save());
             //var_dump($item -> id);
         }
@@ -62,6 +163,30 @@ class Index extends Controller  {
         //var_dump($model[0]);
         //$model[0] -> save();
         
+    }
+    
+    public function sendCollection() {
+        /*
+        $http = new Http();
+        for($i = 0; $i < 0; $i++) {
+            $image = file_get_contents("collect/{$i}.png");
+            
+            $antigate = $http -> post('http://rucaptcha.com/in.php', [
+                'method' => 'base64',
+                'key' => 'd6c189ec8213ec0a00c39c8cbdfd2fc0',
+                'body' => base64_encode($image),
+            ]) -> body;
+
+            $antigate = explode('|', $antigate);
+
+            $trainset = new TrainSet();
+            $trainset -> image = $image;
+            $trainset -> antigate_id = $antigate[1];
+            //var_dump($trainset -> save());
+            
+            var_dump($trainset -> save());
+        }
+        */
     }
     
     public function sendToAntigate() {
@@ -104,22 +229,20 @@ echo(base64_decode($image[0]['content']));
         
         //return false;
         $http = new Http();
-        //$image = base64_encode($http -> get('http://check.gibdd.ru/proxy/captcha.jpg') -> body);
-        $image = base64_encode(file_get_contents('collect/0.png'));
-/*
+        $image = $http -> get('http://check.gibdd.ru/proxy/captcha.jpg') -> body;
+        //$image = base64_encode(file_get_contents('collect/0.png'));
+
         $antigate = $http -> post('http://rucaptcha.com/in.php', [
             'method' => 'base64',
             'key' => 'd6c189ec8213ec0a00c39c8cbdfd2fc0',
-            'body' => $image,
+            'body' => base64_encode($image),
         ]) -> body;
 
         $antigate = explode('|', $antigate);
-*/
-        $trainset = new TrainSet();
-
-        $trainset -> image = base64_decode($image);
-        $trainset -> code = 'asdzx';
-        //$trainset -> antigate_id = $antigate[1];
-        var_dump($trainset -> save());
+        
+        $trainingSet = new TrainingSet();
+        $trainingSet -> image = $image;
+        $trainingSet -> antigate_id = $antigate[1];
+        var_dump($trainingSet -> save());
     }
 }

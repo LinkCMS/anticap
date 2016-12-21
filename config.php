@@ -9,6 +9,10 @@ return $config = [
         'host' => 'localhost',
         'username' => 'root',
         'password' => 'root',
-        'database' => 'gibdd',
+        'database' => 'gb',
     ],
+    'fann' => [
+        'inputs' => 260,
+        'net' => 'setup.net'
+    ]
 ];

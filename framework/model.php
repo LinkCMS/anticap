@@ -92,7 +92,7 @@ class Model {// extends MySQL {
     public function save() {
         if($this -> isNewRecord()) {
             //var_dump(self::$connection);
-            return self::$connection -> insert();
+            return self::$connection -> insert($this);
         } else {
             return self::$connection -> update($this);
         }
