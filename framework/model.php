@@ -57,7 +57,7 @@ class Model {// extends MySQL {
         self::$isNewRecord = false;
         return self::getConnection();
     }
-
+    
     public function __get($key) {
         //return self::$connection -> getAttribute($key);
         return $this -> attributes[$key];

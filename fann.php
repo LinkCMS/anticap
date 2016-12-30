@@ -48,9 +48,14 @@ class Fann {
         }
     }
     
-    public function test($inputs) {
+    public function test($inputs, &$output = null) {
         $out = fann_run($this -> instance, $inputs);
         arsort($out);
+        
+        //if(isset($output)) {
+            $output = key($out);
+        //}
+        
         return $out;
         /*
         var_dump($out);die();

@@ -20,6 +20,7 @@ class Http {
     public function get($query)
     {
         curl_setopt($this -> connection, CURLOPT_URL, $query);
+        curl_setopt($this -> connection, CURLOPT_POST, false);
         curl_setopt($this -> connection, CURLOPT_RETURNTRANSFER, true);
         return new HttpResponse(curl_exec($this -> connection), $this -> getInfo());
     }
@@ -39,7 +40,7 @@ class Http {
         curl_setopt($this -> connection, CURLOPT_URL, $url);
         curl_setopt($this -> connection, CURLOPT_POST, true);
         curl_setopt($this -> connection, CURLOPT_POSTFIELDS, $data);
-        
+        var_dump($data);
         return new HttpResponse(curl_exec($this -> connection), $this -> getInfo());
     }
 }

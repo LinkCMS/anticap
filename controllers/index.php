@@ -7,43 +7,134 @@ require_once('captcha.php');
 require_once('fann.php');
 
 class Index extends Controller  {
-    public function generateTrainFile() {
+    public function generateTestFile() {
+        set_time_limit(0);
+
+        $dir = scandir('test');
+        array_shift($dir);
+        array_shift($dir);
+        
+        $testSet = null;
+        $testSet .= (count($dir) * 5).' '.App::$config['fann']['inputs'].' 10';
+
+        foreach ($dir as $i => $item) {
+            $captcha = new Captcha(file_get_contents('test/'.$item));
+            $captcha -> preprocess();
+            $segments = $captcha -> map();
+
+            foreach ($segments as $j => $segment) {
+                /*    
+                    $segment -> draw();
+                    continue;
+                */
+                $output = array_fill(0, 10, 0);
+                $testSet .= PHP_EOL.implode(' ', $segment -> getArrayOfPixels());
+                $output[$item[$j]] = 1;
+                $testSet .= PHP_EOL.implode(' ', $output);
+            }
+        }
+
+        file_put_contents('test.dat', $testSet);
+    }
+
+    public function vis($digit) {
+        for($digit = 0; $digit <= 9; $digit++) {
+            echo '<div style="position: relative; float: left; width: 20px; height: 20px;">';
+            $dir = scandir('segments/'.$digit);
+            array_shift($dir);
+            array_shift($dir);
+            foreach($dir as $i => $file) {
+                $seg = new Captcha(file_get_contents('segments/'.$digit.'/'.$file));
+                $seg -> visualize();
+                
+            }
+            echo '</div>';
+        }
+    }
+
+    public function map($file) {
+        $captcha = new Captcha(file_get_contents($file));
+        $captcha -> preprocess();
+        $segments = $captcha -> map();
+        foreach($segments as $segment) {
+            $segment -> draw();
+        }
+    }
+    
+    public function generateSegments() {
         set_time_limit(0);
         $model = TrainingSet::find() -> select() -> all();
 
-        $trainingSet = null;
-        $trainingSet .= (count($model) * 5).' '.App::$config['fann']['inputs'].' 10';
+        foreach ($model as $i => $item) {
+            $captcha = new Captcha($item -> image);
+            $captcha -> preprocess();
+            $segments = $captcha -> map();
 
+            foreach ($segments as $j => $segment) {
+                $segment -> save('segments/'.$item -> code[$j].'/'.rand(0, 9999999).'.png');
+            }
+        }
+    }
+    
+    public function generateTrainFile() {
+        set_time_limit(0);
+        //$count = TrainingSet::find() -> count();
+    
+        $trainingSet = [];
+        $trainingSet[] = null;
+        $count = 0;
+        //$trainingSet .= ($count * 5).' '.App::$config['fann']['inputs'].' 10';
+        
+        for($i = 0; $i <= 9; $i++) {
+            $dir = scandir('segments/'.$i);
+            array_shift($dir);
+            array_shift($dir);
+            
+            foreach($dir as $file) {
+                $segment = new Segment(file_get_contents('segments/'.$i.'/'.$file));
+
+                $count++;
+                
+                $output = array_fill(0, 10, 0);
+                $trainingSet[] = implode(' ', $segment -> getArrayOfPixels());
+                $output[$i] = 1;
+                $trainingSet[] = implode(' ', $output);
+            }
+            
+            $trainingSet[0] = $count.' '.App::$config['fann']['inputs'].' 10';
+        }
+        
+        /*
         foreach ($model as $i => $item) {
             $captcha = new Captcha($item -> image);
             $captcha -> preprocess();
             $segments = $captcha -> map();
             
             foreach ($segments as $j => $segment) {
-            /*    
-                $segment -> draw();
-                continue;
-            */
+            
                 $output = array_fill(0, 10, 0);
                 $trainingSet .= PHP_EOL.implode(' ', $segment -> getArrayOfPixels());
                 $output[$item -> code[$j]] = 1;
                 $trainingSet .= PHP_EOL.implode(' ', $output);
             }
         }
+        */
 
-        file_put_contents('train.dat', $trainingSet);
+        file_put_contents('train.dat', implode(PHP_EOL, $trainingSet));
     }
     
     public function train() {
         set_time_limit(0);
        
         $fann = new Fann();
-        $fann -> create([App::$config['fann']['inputs'], 100, 100, 100, 10]);
+        //$fann -> load(App::$config['fann']['net']);
+        $fann -> create([App::$config['fann']['inputs'], 198, 136, 74, 10]);
         $fann -> train('train.dat', App::$config['fann']['net']);
     }
     
     public function test($input = []) {
         $fann = new Fann();
+        $output = null;
         $dir = scandir('test');
         array_shift($dir);
         array_shift($dir);
@@ -54,7 +145,8 @@ class Index extends Controller  {
         $captcha -> preprocess();
         $segments = $captcha -> map();
         foreach($segments as $segment) {
-            var_dump($fann -> test($segment -> getArrayOfPixels()));
+            var_dump($fann -> test($segment -> getArrayOfPixels(), $output));
+            var_dump($output);
         }
     }
     
@@ -189,7 +281,7 @@ class Index extends Controller  {
         */
     }
     
-    public function sendToAntigate() {
+    public function sendToAntigate($count = 1) {
 
 
 /*
@@ -229,20 +321,23 @@ echo(base64_decode($image[0]['content']));
         
         //return false;
         $http = new Http();
-        $image = $http -> get('http://check.gibdd.ru/proxy/captcha.jpg') -> body;
-        //$image = base64_encode(file_get_contents('collect/0.png'));
-
-        $antigate = $http -> post('http://rucaptcha.com/in.php', [
-            'method' => 'base64',
-            'key' => 'd6c189ec8213ec0a00c39c8cbdfd2fc0',
-            'body' => base64_encode($image),
-        ]) -> body;
-
-        $antigate = explode('|', $antigate);
         
-        $trainingSet = new TrainingSet();
-        $trainingSet -> image = $image;
-        $trainingSet -> antigate_id = $antigate[1];
-        var_dump($trainingSet -> save());
+        for($i = 0; $i < $count; $i++) {
+            $image = $http -> get('http://check.gibdd.ru/proxy/captcha.jpg') -> body;
+            //$image = base64_encode(file_get_contents('collect/0.png'));
+            
+            $antigate = $http -> post('http://rucaptcha.com/in.php', [
+                'method' => 'base64',
+                'key' => 'd6c189ec8213ec0a00c39c8cbdfd2fc0',
+                'body' => base64_encode($image),
+            ]) -> body;
+    
+            $antigate = explode('|', $antigate);
+            
+            $trainingSet = new TrainingSet();
+            $trainingSet -> image = $image;
+            $trainingSet -> antigate_id = $antigate[1];
+            var_dump($trainingSet -> save());
+        }
     }
 }

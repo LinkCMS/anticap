@@ -70,6 +70,14 @@ class MySQL {
         return $statement;
     }
 
+
+    public function count() {
+        $this -> sql = 'SELECT COUNT(*) FROM `' . $this->tableName . '`';
+        $statement = $this -> pdo -> prepare($this -> sql);
+        $statement -> execute();
+        return $statement -> fetchColumn();
+    }
+
     //public function insert($attributes) {
     public function insert($model) {
         //var_dump()

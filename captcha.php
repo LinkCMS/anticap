@@ -11,15 +11,80 @@ class Captcha {
     public function draw() {
         echo '<img src="data:image/png;base64,'. base64_encode($this -> image -> getImageBlob()) .'">';
     }
+    
+    public function visualize() {
+        $this -> image -> transparentPaintImage('white', 0, 10000 , false);
+        //$this -> image -> setImageOpacity(1);
+        $this -> image -> evaluateImage(Imagick::EVALUATE_MULTIPLY, 0.006, Imagick::CHANNEL_ALPHA);
+        echo '<img style="position: absolute" src="data:image/png;base64,'. base64_encode($this -> image -> getImageBlob()) .'">';
+    }
 
     public function preprocess() {
         $this -> image -> cropImage(95, 30, 10, 15);
+        
+        $mask = clone $this -> image;
+        $mask -> transparentPaintImage('black', 0, 20000, true);
+        $mask -> setImageAlphaChannel(5);
 
         $this -> image -> segmentImage(12, 0, 0.1);
         $this -> image -> transparentPaintImage('white', 0, 10000 , false);
+        
+        $blur = clone $this -> image;
+        $blur -> setImageAlphaChannel(6);
+        $blur -> blurImage(1, 8);
+        
+        $mask -> compositeImage($blur, 38, 0 ,0); // 10
+        $mask -> levelImage(0, 0 , 58000);
+         
+        $this -> image -> compositeImage($mask, 25, 0 ,0); //12
+        $this -> image -> transparentPaintImage('white', 0, 10000 , false);
+        $this -> image -> transparentPaintImage('black', 0, 10000 , false);
         $this -> image -> levelImage(0, 0, 65536);
+        //$this -> image -> levelImage(100, 0, 0);
+
+        /*
+        echo '<div style="background: #ccc;">';
+        echo '<img src="data:image/png;base64,'.base64_encode($mask -> getImageBlob()).'">';
+        echo '<img src="data:image/png;base64,'.base64_encode($blur -> getImageBlob()).'">';
+        echo '<img src="data:image/png;base64,'.base64_encode($this -> image -> getImageBlob()).'">';
+        echo '</div>';
+        die();
+        */
         //$image -> setColorspace(\Imagick::COLOR_BLACK);
         return $this;
+    }
+    
+    public function cropSmallSymbol($segment) {
+        $segment = new Segment($segment);
+        $mask = new ImagickDraw();
+        //$mask -> setFillColor('white');
+        //$mask -> rectangle(0, 0, 90, 30);
+        $mask -> setFillColor('black');
+        //$mask -> rectangle(5, 10, 15, 30);
+        $num = 1;
+        $offset = 16;
+        
+        $mask -> polygon([
+            ['x' => 2 + $num * $offset, 'y' => 8],
+            ['x' => 17 + $num * $offset, 'y' => 8],
+            ['x' => 12 + $num * $offset, 'y' => 30],
+            ['x' => -2 + $num * $offset, 'y' => 30]
+        ]);
+        
+        $m = new Imagick();
+        $m -> setFormat('PNG');
+        $m -> newImage(90, 30, 'white');
+        $m -> drawImage($mask);
+        
+        //$segment -> image -> drawImage($mask);
+        //$segment -> image -> setImageClipMask($m);
+        $segment -> image -> compositeImage($m, 3, 0, 0);
+        
+        $segment -> draw();
+        //echo '<img src="data:image/png;base64,'.base64_encode($segment -> draw()).'">';
+        
+        //$segment -> draw();
+        die();
     }
 
     public function map($fileName = null) {
@@ -64,6 +129,8 @@ class Captcha {
                  * @var Imagick
                  */
                 $segment = clone $this -> image;
+                $this -> cropSmallSymbol($segment);
+                
                 $segment -> cropImage(20, 60, $offset + 9 , 0);
                 //$segment -> setImageExtent(20, 30);
                 $segment -> extentImage(20, 30, 0, 0);
@@ -193,7 +260,7 @@ class Captcha {
 }
 
 class Segment {
-    private $image;
+    public $image;
     
     public function __construct($segment) {
         $this -> image = new Imagick();
@@ -202,6 +269,10 @@ class Segment {
     
     public function draw() {
         echo '<img src="data:image/png;base64,'. base64_encode($this -> image -> getImageBlob()) .'">';
+    }
+    
+    public function save($filename) {
+        $this -> image -> writeImage($filename);
     }
     
     public function getArrayOfPixels() {
